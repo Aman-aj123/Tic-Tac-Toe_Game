@@ -1,0 +1,156 @@
+* {
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+}
+
+html,
+body {
+     width: 100%;
+}
+
+#main {
+     margin: auto;
+     margin-top: 110px;
+     margin-bottom: 30px;
+     width: 70%;
+}
+
+#main .game-area {
+     display: flex;
+     width: 100%;
+     align-items: center;
+     justify-content: center;
+     margin: auto;
+}
+
+.boxes-container {
+     margin: auto;
+     display: grid;
+     grid-template-columns: repeat(3, 0fr);
+     justify-content: center;
+     place-items: center;
+     position: relative;
+}
+
+.cross-line {
+     position: absolute;
+     width: 100%;
+     height: 6px;
+     border-radius: 2px;
+     background: rgb(33, 231, 33);
+     transform: translateY(0) scale(0) translateX(0) rotate(0);
+     transition: transform .8s ease-in-out;
+}
+
+.boxes-container .boxes {
+     border: 2px solid rgb(45, 39, 214);
+     width: 93px;
+     height: 94px;
+     cursor: pointer;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 37px;
+     font-family: cursive;
+     text-transform: uppercase;
+     color: red;
+     font-weight: 500;
+     transition: .2s ease-in-out;
+}
+
+.boxes-container .boxes:hover {
+     background: rgba(0, 0, 0, 0.1);
+}
+
+.boxes-container .first,
+.second,
+.third {
+     border-top: none !important;
+}
+
+.first,
+.fourth,
+.seventh {
+     border-left: none !important;
+}
+
+.third,
+.sixth,
+.ninth {
+     border-right: none !important;
+}
+
+.seventh,
+.eighth,
+.ninth {
+     border-bottom: none !important;
+}
+
+
+.option-btns {
+     width: 100%;
+     margin-top: 23px;
+     margin-left: 15px;
+}
+
+.option-btns .reset {
+     transform: scale(1.2);
+     padding: 7px 12px;
+     border-radius: 4px;
+     font-size: 16px;
+     letter-spacing: 1px;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     border: none;
+     outline: none;
+     background: rgb(229, 20, 107);
+     color: white;
+     margin: auto;
+     width: fit-content;
+     cursor: pointer;
+     transition: .2s ease-in-out;
+}
+
+.option-btns button:hover {
+     opacity: .7;
+}
+
+.win-gif {
+     text-align: center;
+     transform: scale(0);
+     width: 0;
+     height: 0;
+     transition: transform .3s ease-in-out;
+}
+
+.display-gif {
+     transform: scale(1);
+     width: 60px;
+     height: auto;
+}
+
+.win-gif img {
+     width: 84%;
+     min-width: 154px;
+     object-fit: cover;
+}
+
+
+.turn-text {
+     margin: 15px 0;
+     font-size: 13px;
+     white-space: nowrap;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     color: rgb(38, 36, 36);
+}
+
+
+@media(max-width: 523px) {
+     #main .game-area {
+          flex-direction: column;
+     }
+
+     #main {
+          width: 100%;
+     }
+}
